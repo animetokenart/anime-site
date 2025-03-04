@@ -1,21 +1,64 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    
+    </head>
+    <body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <link rel="icon" href="Logopit_1741119773487.png">
-        <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <meta name="description" content="" />
-        <meta name="theme-color" content="#000000"/>
-        <meta name="Anime Token Token" content="The"/>
-        <link rel="apple-touch-icon" href="Logopit_1741119773487.png">
-        <link rel="manifest" href="Logopit_1741119773487.png">
-        <title>AnimeToken</title>
-  </head>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+        }
 
-  
-<style>
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-body {
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        
+        
+        .banner {
   font-family: sans-serif;
   margin: 0;
   display: flex;
@@ -39,16 +82,31 @@ h1 {
   font-size: 3em;
   color: #3D399A;
 }
-  
+    </style>
 
-</style>
 
-  
-<body>
-  <div class="container">
+
+<header>
+    <div class="logo">
+        <img src="Logopit_1741119773487.png" alt="Logo">
+        <h1>Mi Página</h1>
+    </div>
+    <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</header>
+
+<div class="banner">
+<div class="container">
     <img src="Logopit_1741119773487.png" alt="AnimeToken Logo" class="logo">
     <h1>AnimeToken</h1>
   </div>
 
+
 </body>
 </html>
+
+
+
