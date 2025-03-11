@@ -1,123 +1,257 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Logopit_1741645871014.png">
     <meta name="theme-color" content="#1F1633"/>
-    <title>Anime Token</title>
-
-    
-    
-    </head>
-    <body>
+    <title>AnimeToken</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        body {
             font-family: Arial, sans-serif;
         }
-
-        
-        header {
+        body {
+            background: #f8f8f8;
+        }
+        /* Barra superior */
+        .top-bar {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            background: #000;
+            background: #333;
             color: white;
-            padding: 15px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000; /* Asegura que esté por encima del contenido */
+            padding: 15px 30px;
         }
-
-
-        .logo {
-            display: flex;
-            align-items: center;
+        .top-bar img {
+            height: 40px;
         }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-
         .menu {
-            list-style: none;
             display: flex;
+            list-style: none;
         }
-
         .menu li {
             margin: 0 15px;
         }
-
         .menu a {
             color: white;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
         }
-
-        .menu a:hover {
-            text-decoration: underline;
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
         }
-        
-        
+        /* Banner */
         .banner {
-  font-family: sans-serif;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #000000;
-}
-
-.container {
-  text-align: center;
-}
-
-.logo {
-  width: 200px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 3em;
-  color: #fff;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f4f4f4;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+        .banner-text {
+            max-width: 50%;
+        }
+        .banner h2 {
+            font-size: 28px;
+            color: #333;
+        }
+        .banner p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .banner img {
+            width: 40%;
+            border-radius: 8px;
+        }
+        /* Barra interior */
+        .inner-bar {
+            background: #555;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        /* About */
+        .about {
+            padding: 40px;
+            text-align: center;
+        }
+        .about h2 {
+            font-size: 26px;
+            color: #333;
+        }
+        .about p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+        /* Sección ART */
+        .art-section {
+            text-align: center;
+            padding: 40px;
+        }
+        .art-section h2 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .carousel-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 5px;
+        }
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background: #444;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                text-align: right;
+                padding: 10px;
+            }
+            .menu li {
+                margin: 10px 0;
+            }
+            .menu a {
+                display: block;
+                padding: 10px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .banner-text {
+                max-width: 100%;
+            }
+            .banner img {
+                width: 80%;
+                margin-top: 20px;
+            }
+        }
     </style>
+</head>
+<body>
 
-
-
-<header>
-    <div class="logo">
+    <!-- Barra superior -->
+    <div class="top-bar">
         <img src="Logopit_1741645871014.png" alt="Logo">
-        <h1>Anime Token</h1>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <ul class="menu">
+            <li><a href="#">In</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Art</a></li>
+        </ul>
     </div>
-    <ul class="menu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-    </ul>
-</header>
 
-<div class="banner">
-<div class="container">
-    <img src="Logopit_1741645871014.png" alt="AnimeToken Logo" class="logo">
-    <h1>AnimeToken</h1>
-  </div>
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h2>AnimeToken</h2>
+            <p>AnimeToken is a cryptocurrency designed for anime, manga, and art lovers. Powered by blockchain technology, AnimeToken allows fans to support their favorite creators, purchase exclusive merchandise, and access premium content within the ecosystem.</p>
+        </div>
+        <img src="imagen.jpg" alt="Imagen de presentación">
+    </div>
 
+    <!-- Barra interior -->
+    <div class="inner-bar">
+        _____________________
+    </div>
+
+    <!-- About -->
+    <div class="about">
+        <h2>About</h2>
+        <p>. . .</p>
+    </div>
+
+    <!-- Sección ART (Carrusel de Imágenes) -->
+    <div class="art-section">
+        <h2>Art</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn prev" onclick="prevImage()">←</button>
+            <div class="carousel">
+                <img src="art1.jpg" class="active" alt="Arte 1">
+                <img src="Logopit_1741645871014.png" alt="">
+                <img src="art3.jpg" alt="Arte 3">
+            </div>
+            <button class="carousel-btn next" onclick="nextImage()">→</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector(".menu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll(".carousel img");
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove("active"));
+            images[index].classList.add("active");
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
+            showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
+            showImage(currentImageIndex);
+        }
+    </script>
 
 </body>
 </html>
-
-
 
