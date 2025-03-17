@@ -308,6 +308,28 @@
       const menu = document.getElementById('menu');
       menu.classList.toggle('active');
     }
+
+
+
+    <!-- Script para art -->
+
+      let currentImageIndex = 0;
+        const images = document.querySelectorAll(".carousel img");
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove("active"));
+            images[index].classList.add("active");
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
+            showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
+            showImage(currentImageIndex);
+        }
   </script>
 
 </body>
