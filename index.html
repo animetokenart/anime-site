@@ -1,101 +1,106 @@
 
-
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <link rel="icon" href="Logopit_1741645871014.png">
     <meta name="theme-color" content="#1F1633"/>
     <title>AnimeToken</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background: #1F1633;
-        }
-        /* Barra superior */
-        .top-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #333;
-            color: white;
-            padding: 15px 30px;
-        }
-        .top-bar img {
-            height: 40px;
-            width : 120px;
-        }
-        .menu {
-            display: flex;
-            list-style: none;
-        }
-        .menu li {
-            margin: 0 15px;
-        }
-        .menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Banner */
-        .banner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #1F1633;
-            padding: 40px;
-            flex-wrap: wrap;
-        }
-        .banner-text {
-            max-width: 50%;
-        }
-        .banner h2 {
-            font-size: 28px;
-            color: #fff;
-        }
-        .banner p {
-            font-size: 18px;
-            color: #fff;
-            margin-top: 10px;
-        }
-        .banner img {
-            width: 40%;
-            border-radius: 8px;
-        }
-        /* Barra interior */
-        .inner-bar {
-            background: #555;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-size: 18px;
-        }
-        /* About */
-        .about {
-            padding: 40px;
-            text-align: center;
-        }
-        .about h2 {
-            font-size: 26px;
-            color: #fff;
-        }
-        .about p {
-            font-size: 18px;
-            color: #fff;
-            margin-top: 10px;
-            max-width: 800px;
-            margin: 10px auto;
-        }
-        /* Sección ART */
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #333; }
+
+    /* Barra superior */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: #111;
+      color: white;
+      position: relative;
+    }
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+    .navbar .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .menu-toggle span {
+      background-color: white;
+      margin: 4px 0;
+      height: 3px;
+      width: 25px;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+    }
+    .menu a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    /* Responsive: esconder menú en móvil */
+    @media (max-width: 768px) {
+      .menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #111;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+      .menu a {
+        margin: 15px 0;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Banner */
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background-color: #f5f5f5;
+      flex-wrap: wrap;
+    }
+    .banner-text {
+      width: 50%;
+    }
+    .banner-image img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* Secciones */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    
+/* Sección ART */
         .art-section {
             text-align: center;
             padding: 40px;
@@ -143,78 +148,121 @@
         .next {
             right: 10px;
         }
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                background: #444;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 200px;
-                text-align: right;
-                padding: 10px;
-            }
-            .menu li {
-                margin: 10px 0;
-            }
-            .menu a {
-                display: block;
-                padding: 10px;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .banner {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-            .banner-text {
-                max-width: 100%;
-            }
-            .banner img {
-                width: 80%;
-                margin-top: 20px;
-            }
-        }
-    </style>
+    
+    .team img{
+      width: 120px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #111;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer .contact, .footer .social {
+      margin: 10px 0;
+    }
+    .footer .social a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .copyright {
+      text-align: center;
+      background-color: #000;
+      color: #aaa;
+      padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .banner-text, .banner-image {
+        width: 100%;
+      }
+      .footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .banner-text h1 {
+        font-size: 24px;
+      }
+      .banner-text p {
+        font-size: 14px;
+      }
+      .navbar .logo h2 {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Barra superior -->
-    <div class="top-bar">
-        <img src="Logopit_1741834215834.png" alt="Logo">
-        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-        <ul class="menu">
-            <li><a href="#">In</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Art</a></li>
-        </ul>
+  <!-- Barra superior -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+      <h2>AnimeToken</h2>
     </div>
 
-    <!-- Banner -->
-    <div class="banner">
-        <div class="banner-text">
-            <h2>AnimeToken</h2>
-            <p>AnimeToken is a cryptocurrency designed for anime, manga, and art lovers. Powered by blockchain technology, AnimeToken allows fans to support their favorite creators, purchase exclusive merchandise, and access premium content within the ecosystem.</p>
-        </div>
-        <img src="106a9b3aec77596e47b3922a5e105180_low.webp" alt="Imagen de presentación">
+    <!-- Botón menú hamburguesa -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <!-- Barra interior -->
-    <div class="inner-bar">
-        _____________________
+    <!-- Menú -->
+    <div class="menu" id="menu">
+      <a href="#about">About</a>
+      <a href="#tokenomic">Tokenomic</a>
+      <a href="#art">Arte</a>
+      <a href="#team">Equipo</a>
     </div>
+  </div>
 
-    <!-- About -->
-    <div class="about">
-        <h2>About</h2>
-        <p>. . .</p>
+  <!-- Banner -->
+  <div class="banner">
+    <div class="banner-text">
+      <h1>AnimeToken</h1>
+      <h3>AnimeToken is a cryptocurrency designed for anime, manga, and art lovers. Powered by blockchain technology, AnimeToken allows fans to support their favorite creators, purchase exclusive merchandise, and access premium content within the ecosystem.</h3>
     </div>
+    <div class="banner-image">
+      <img src="banner-image.png" alt="Banner Imagen" />
+    </div>
+  </div>
 
-    <!-- Sección ART (Carrusel de Imágenes) -->
+  <!-- About -->
+  <section id="about">
+    <h2>About</h2>
+    <p>Información sobre el proyecto, su misión, visión y objetivos.</p>
+  </section>
+
+  <!-- Tokenomic -->
+  <section id="tokenomic">
+    <h2>Tokenomic</h2>
+   <p>Total Supply:</p>
+         <h2>10B</h2>
+   <p>Token Tax:</p>
+         <h2>0%</h2>
+   <p>Contract:</p>
+         <h3>0xF1203aC1A8583DD949FE3b52685E8071dbB9942e</h3>
+  </section>
+
+<!-- Sección ART (Carrusel de Imágenes) -->
     <div class="art-section">
         <h2>Art</h2>
         <div class="carousel-container">
@@ -228,30 +276,38 @@
         </div>
     </div>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.querySelector(".menu");
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
-        }
+  <!-- Equipo -->
+  <section id="team" class="team">
+    <h2>Equipo</h2>
+    <div>
+      <img src="team1.jpg" alt="Miembro 1" />
+      <img src="team2.jpg" alt="Miembro 2" />
+      <img src="team3.jpg" alt="Miembro 3" />
+    </div>
+  </section>
 
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll(".carousel img");
+  <!-- Footer -->
+  <div class="footer">
+    <div class="contact">
+      <p>Contacto: contacto@proyecto.com</p>
+    </div>
+    <div class="social">
+      <a href="#">Telegram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </div>
 
-        function showImage(index) {
-            images.forEach(img => img.classList.remove("active"));
-            images[index].classList.add("active");
-        }
+  <div class="copyright">
+    <p>&copy; 2025 Nombre Proyecto. Todos los derechos reservados.</p>
+  </div>
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
-            showImage(currentImageIndex);
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
-            showImage(currentImageIndex);
-        }
-    </script>
+  <!-- Script para el menú -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
