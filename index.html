@@ -283,42 +283,75 @@ color: #f4f4f4;
                 width: 80%;
                 margin-top: 20px;
             }
+/*   ----------Footer----------   */
+           body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
-            footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-        }
+/* Contenido de la página */
+.content {
+  padding: 20px;
+  text-align: center;
+}
 
-        .top-footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
+/* Estilos del Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-        .logo {
-            width: 50px; /* Ajusta el tamaño del logo */
-            height: 50px;
-        }
+.footer-logo {
+  margin-bottom: 10px;
+}
 
-        .brand-name {
-            color: #fff;
-            font-size: 24px;
-            margin: 0;
-        }        
-        .emaill{
-        color: #fff;    
-        }
-        .copyright {
-            color: #fff;
-            font-size: 14px;
-            margin-top: 10px;
-        }
+.footer-logo .logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
 
+.footer-logo .brand-name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
-        }
+.footer-contact {
+  margin: 10px 0;
+}
+
+.footer-contact a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.footer-copyright {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+/* Estilos para móviles */
+@media (max-width: 600px) {
+  .footer {
+    text-align: left;
+  }
+  .footer-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+      
+
+        
     </style>
 </head>
 <body>
@@ -405,17 +438,18 @@ color: #f4f4f4;
 
     <!-- pie de pagina -->  
 
-    <footer>
-        <div class="top-footer">
-            <img src="Logopit_1742603491867.png" alt="Logo" class="logo">
-            <h2 class="brand-name">AnimeToken</h2>
-        </div>
-        <div class="emaill">
-                   <h2>contact</h2>
-                   <h4>info@animetoken.art</h4>
-       
-        <p class="copyright">© 2025 AnimeToken.</p>
-    </footer>
+   <footer class="footer">
+    <div class="footer-logo">
+      <img src="Logopit_1742603491867.png" alt="Logo" class="logo">
+      <span class="brand-name">AnimeToken</span>
+    </div>
+    <div class="footer-contact">
+      <p>Contacto: <a href="mailto:info@animetoken.com">info@animetoken.info</a></p>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2025 AnimeToken.</p>
+    </div>
+  </footer>
 
 
 
