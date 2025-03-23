@@ -1,206 +1,72 @@
-<!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-    <link rel="icon" href="Logopit_1742603491867.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Logopit_1742603491867.png">
     <meta name="theme-color" content="#1F1633"/>
-    <title>AnimeToken</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background: #1F1633;
-        }
-        /* Barra superior */
-        .top-bar {       
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #333;
-            color: white;
-            padding: 15px 30px;
-        }
-        .top-bar img {
-            height: 50px;
-            width : 50px;
-        }
+  
+  
+  <meta name="description" content="AnimeTeken is a currency focused on the world of anime and art.">
 
-      
-        
-        .menu {
-            display: flex;
-            list-style: none;
-        }
-        .menu li {
-            margin: 0 15px;
-        }
-        .menu a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .menu-toggle {
-            display: none;
-            color: #ffffff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Banner */
-        .banner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #1F1633;
-            padding: 40px;
-            flex-wrap: wrap;
-        }
-        .banner-text {
-            max-width: 50%;
-        }
-        .banner h2 {
-            font-size: 28px;
-            color: #fff;
-        }
-        .banner p {
-            font-size: 18px;
-            color: #fff;
-            margin-top: 10px;
-        }
-        .banner img {
-            width: 40%;
-            border-radius: 8px;
-        }
-        /* Barra con linia */
-        .inner-bar {
-            background: #323232;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-size: 18px;
-        }
-        /* About */
-        .about {
-            padding: 40px;
-            text-align: center;
-        }
-        .about h2 {
-            font-size: 26px;
-            color: #fff;
-        }
-        .about p {
-            font-size: 18px;
-            color: #fff;
-            margin-top: 10px;
-            max-width: 800px;
-            margin: 10px auto;
-        }
-        /* Sección de Tokenomic */
+  
 
-        .container {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #140a2a;
-    box-shadow: 0px 4px 10px #ffffff1a;
-    border-radius: 10px;
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Títulos */
-.title {
-    font-size: 28px;
-    color: #ffffff;
+footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.subtitle {
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: bold;
+footer .social-icons a {
+  margin: 0 10px;
 }
 
-.tokencont{
-color: #f4f4f4;
-
+footer .social-icons img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
 }
 
-/* Contrato de token */
-.contract {
-    font-size: 14px;
-    margin: 15px 0;
-}
-
-.address {
-    font-family: monospace;
-    background: #f4f4f4;
-    padding: 5px 8px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-.copy-btn {
-    border: none;
-    background: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Detalles de distribución */
-.token-details {
-    text-align: left;
-    margin-top: 20px;
-}
-
-.detail {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
-    font-size: 16px;
-    color: #f4f4f4;
-    border-bottom: 1px solid #ddd;
-}
-
-.detail:last-child {
-    border-bottom: none;
-}
-
-/* Gráfico de pastel (simulado) */
-.chart-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.chart {
-    width: 150px;
-    height: 150px;
-    background: conic-gradient(
-        #ff6384 0% 46%,  /* Marketing */
-        #36a2eb 46% 48%, /* CEX listings */
-        #ffce56 48% 68%, /* Burned */
-        #4bc0c0 68% 98%, /* Presale */
-        #9966ff 98% 100%  /* DEX listing */
-    );
-    border-radius: 50%;
-    display: flex;
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
-}
+  }
 
+  header .logo {
+    margin-bottom: 10px;
+  }
 
+  header nav {
+    margin-top: 10px;
+    text-align: center;
+  }
 
+  header nav a {
+    margin-left: 0;
+    margin-right: 10px;
+  }
 
+  #banner {
+    flex-direction: column;
+  }
 
+  #banner .banner-description,
+  #banner .banner-image {
+    width: 100%;
+    text-align: center;
+  }
 
-
-
-
-        /* Sección ART */
+  /* Sección ART */
         .art-section {
             text-align: center;
             padding: 40px;
@@ -240,6 +106,8 @@ color: #f4f4f4;
             border-radius: 5px;
         }
         .carousel-btn:hover {
+            background: rgba
+        .carousel-btn:hover {
             background: rgba(0, 0, 0, 0.8);
         }
         .prev {
@@ -248,173 +116,68 @@ color: #f4f4f4;
         .next {
             right: 10px;
         }
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                background: #444;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 200px;
-                text-align: right;
-                padding: 10px;
-            }
-            .menu li {
-                margin: 10px 0;
-            }
-            .menu a {
-                display: block;
-                padding: 10px;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .banner {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-            .banner-text {
-                max-width: 100%;
-            }
-            .banner img {
-                width: 80%;
-                margin-top: 20px;
-            }
-/*   ----------Footer----------   */
-           
-
-/* Contenido de la página */
-.content {
-  padding: 20px;
-  text-align: center;
-}
-
-/* Estilos del Footer */
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-logo {
-  margin-bottom: 10px;
-}
-
-.footer-logo .logo {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.footer-logo .brand-name {
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.footer-contact {
-  margin: 10px 0;
-}
-
-.footer-contact a {
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-.footer-copyright {
-  font-size: 0.9em;
-  margin-top: 10px;
-}
-
-/* Estilos para móviles */
-@media (max-width: 600px) {
-  .footer {
-    text-align: left;
+  
+  
+  
+  
+  
+  #team .team-members .team-member {
+    width: 100%;
   }
-  .footer-logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+  footer .footer-content {
+    flex-direction: column;
+  }
+
+  footer .social-icons {
+    margin-top: 10px;
   }
 }
-      
+</style>
 
-        
-    </style>
 </head>
+
+
 <body>
 
-    <!-- Barra superior -->
-    <div class="top-bar">
-        <img src="Logopit_1742603491867.png" alt="Logo">
-        
-        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-        <ul class="menu">
-            <li><a href="#About">About</a></li>
-            <li><a href="#container">Tokenomic</a></li>
-            <li><a href="#art-section">Art</a></li>
-        </ul>
+  <header>
+    <div class="logo">
+      <img src="logo.svg" alt="Logo" width="50" height="50">
+      <span>AnimeToken</span>
     </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#art">Arte</a>
+      <a href="#team">Equipo</a>
+    </nav>
+  </header>
 
-    <!-- Banner -->
-    <div class="banner" id="banner">
-        <div class="banner-text">
-            <h2>AnimeToken</h2>
-            <p>AnimeTeken is a currency focused on the world of anime and art.</p>
-        </div>
-        <img src="106a9b3aec77596e47b3922a5e105180_low.webp" alt="Imagen de presentación">
-    </div>
-
-    <!-- Barra interior -->
-    <div class="inner-bar">
-        _____________________
-    </div>
-
-    <!-- About -->
-    <div class="about" id="About">
-        <h2>About</h2>
-        <p>AnimeToken is a cryptocurrency designed for anime, manga, and art lovers. Powered by blockchain technology, AnimeToken allows fans to support their favorite creators, purchase exclusive merchandise, and access premium content within the ecosystem.</p>
-    </div>
-
-
-<!-- Tokenomic -->
-
-
-<div class="container" id="container">
-    <h1 class="title">Tokenomics</h1>
-    <p class="subtitle">10B Total Tokens. No Tax.</p>
-    <p class="contract">
-        <strong class="tokencont">Token Contract:</strong> 
-        <span class="address">0xFe777Dc834BE3C4B77Bba89A2A13518a92c6770b</span> 
-        <button class="copy-btn" onclick="copyAddress()">📋</button>
-    </p>
+  <section id="banner">
+    <div class="banner-description">
+      <h1>AnimeToken</h1>
+      <p>AnimeTeken is a currency focused on the world of anime and art.</p>
     
-    <div class="token-details">
-        <div class="detail"><span>Marketing & community engagement:</span> <strong>46%</strong></div>
-        <div class="detail"><span>CEX listings:</span> <strong>2%</strong></div>
-        <div class="detail"><span>Burned on mint:</span> <strong>20%</strong></div>
-        <div class="detail"><span>Airdrop:</span> <strong>30%</strong></div>
-        <div class="detail"><span>DEX listing:</span> <strong>2%</strong></div>
     </div>
-
-    <div class="chart-container">
-        <div class="chart">
-            <span>10B Total Supply</span>
-        </div>
+    <div class="banner-image">
+      <img src="106a9b3aec77596e47b3922a5e105180_low.webp" alt="Imagen del Banner">
     </div>
-</div>
+  </section>
 
+  <section id="about">
+    <h2>About</h2>
+    <p>Información detallada sobre la empresa, su misión y visión.</p>
+  </section>
 
+  <section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <p>Detalles.</p>
+    <p>Total Supply: 10,000,000,000 $ANIME</p>
+     <p>o Presale: 60%</p>
+     <p>Detalles.</p>
+  </section>
 
-
-    <!-- Sección ART (Carrusel de Imágenes) -->
+<!-- Sección ART (Carrusel de Imágenes) -->
     <div class="art-section" id="art-section">
         <h2>Art</h2>
         <div class="carousel-container">
@@ -428,64 +191,27 @@ color: #f4f4f4;
         </div>
     </div>
 
+  <section id="team">
+    <h2>Equipo</h2>
+    <div class="team-members">
+     </div>
+  </section>
 
-    
-
-    <!-- pie de pagina -->  
-
-   <footer class="footer">
-    <div class="footer-logo">
-      <img src="Logopit_1742603491867.png" alt="Logo" class="logo">
-      <span class="brand-name">AnimeToken</span>
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <spqn>soport@aninetoken.art</span>
+      </div>
+      <div class="social-icons">
+        <a href="#" target="_blank"><img src="telegram.svg" alt="Telegram"></a>
+        <a href="#" target="_blank"><img src="twitter.svg" alt="Twitter"></a>
+      </div>
     </div>
-    <div class="footer-contact">
-      <p>Contacto: <a href="mailto:info@animetoken.com">info@animetoken.info</a></p>
-    </div>
-    <div class="footer-copyright">
-      <p>&copy; 2025 AnimeToken.</p>
+    <div class="copyright">
+      <p>&copy; 2024 AnimeToken.</p>
     </div>
   </footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 
-
-    <script>
-        function toggleMenu() {
-            var menu = document.querySelector(".menu");
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
-        }
-
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll(".carousel img");
-
-        function showImage(index) {
-            images.forEach(img => img.classList.remove("active"));
-            images[index].classList.add("active");
-        }
-
-        function prevImage() {
-            currentImageIndex = (currentImageIndex === 0) ? images.length - 1 : currentImageIndex - 1;
-            showImage(currentImageIndex);
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex === images.length - 1) ? 0 : currentImageIndex + 1;
-            showImage(currentImageIndex);
-        }
-
-
-
-        function copyAddress() {
-            const address = "0xFe777Dc834BE3C4B77Bba89A2A13518a92c6770b";
-            navigator.clipboard.writeText(address);
-            alert("Dirección copiada: " + address);
-        }
-
-
-
-
-
-
-    </script>
-
-</body>
-</html> 
+</html>
